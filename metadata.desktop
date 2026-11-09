@@ -1,0 +1,12 @@
+[SddmGreeterTheme]
+Name=VLSWM
+Description=Black-and-white minimal SDDM theme for VLSWM
+Author=Vlad175cm
+Copyright=(c) 2026 Vlad175cm
+License=MIT
+Type=sddm-theme
+Version=1.0.0
+Website=https://github.com/Vlad175cm/vlswm-sddm-theme
+Screenshot=assets/preview-dark.png
+MainScript=Main.qml
+ConfigFile=theme.conf

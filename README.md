@@ -30,9 +30,13 @@ sudo ./install.sh
 
 The script:
 
+- verifies that SDDM and the theme source files exist;
+- creates `/usr/share/sddm/themes` and `/etc/sddm.conf.d` if they are missing;
 - copies the theme to `/usr/share/sddm/themes/vlswm`;
-- backs up `/etc/sddm.conf.d/theme.conf` to `theme.conf.bak.YYYY-MM-DD-HHMMSS`;
-- keeps the rest of that file and sets `Current=vlswm`.
+- creates `/etc/sddm.conf.d/theme.conf` if it is missing;
+- otherwise backs it up to `theme.conf.bak.YYYY-MM-DD-HHMMSS`, keeps every other section and changes only `Current=` inside `[Theme]`;
+- does not create another backup when `Current=vlswm` is already active;
+- warns if `/etc/sddm.conf` also sets `[Theme] Current=...`, because it can override `conf.d`.
 
 The theme is used by the next SDDM login screen.
 
